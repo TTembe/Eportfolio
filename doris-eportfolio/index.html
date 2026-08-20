@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doris N. | Electrical &amp; Computer Engineering Portfolio</title>
+<meta name="description" content="E-portfolio of Doris N., Electrical and Computer Engineering student at UCT — embedded systems, RF, and edge AI projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#home" class="nav-brand"><span class="dot"></span>DORIS_N // EEE</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#artefacts" class="nav-link" data-section="artefacts">Artefacts</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================== HERO ============================== -->
+<header class="hero" id="home">
+  <svg class="hero-traces" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#C9BBE8" stroke-width="1.5">
+      <path d="M0 120 H260 L300 160 V300 L340 340 H700"/>
+      <path d="M1200 90 H900 L860 130 V260 L820 300 H520"/>
+      <path d="M0 680 H180 L220 640 V520 L260 480 H560"/>
+      <path d="M1200 720 H980 L940 680 V560 L980 520 H760"/>
+    </g>
+    <g fill="#D9A8C4">
+      <circle cx="300" cy="160" r="4"/>
+      <circle cx="700" cy="340" r="4"/>
+      <circle cx="860" cy="130" r="4"/>
+      <circle cx="520" cy="300" r="4"/>
+      <circle cx="220" cy="640" r="4"/>
+      <circle cx="560" cy="480" r="4"/>
+      <circle cx="940" cy="680" r="4"/>
+      <circle cx="760" cy="520" r="4"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="kicker">// Electrical &amp; Computer Engineering — UCT</p>
+      <h1>Building systems where hardware meets intelligence.</h1>
+      <p>I'm an engineering student who likes to trace a problem all the way from a sensor's analog front end to the dashboard that makes its data useful. This portfolio walks through how I think, what I've built, and where I'm headed.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn">View projects</a>
+        <a href="#contact" class="btn ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">serial_monitor — 115200 baud</span>
+      </div>
+      <div class="terminal-body" id="typeTarget">
+        <span class="prompt">$</span> whoami<br>
+        <span class="cursor" id="typeCursor"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span class="line"></span>SCROLL</div>
+</header>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">01 / About</div>
+    <h2 class="section-title reveal from-up">Who I am</h2>
+    <p class="section-sub reveal from-up">A short introduction to my background, how I work, and what drives my interest in engineering.</p>
+
+    <div class="about-grid">
+      <div class="reveal from-left">
+        <div class="portrait-frame">
+          <!--
+            EDIT ME: replace the src below with your own photo.
+            Put your image file in assets/images/ and reference it,
+            e.g. src="assets/images/profile.jpg"
+          -->
+          <img src="assets/images/profile-placeholder.svg" alt="Portrait of Doris N.">
+          <span class="portrait-tag">Cape Town, South Africa</span>
+        </div>
+      </div>
+
+      <div class="about-copy reveal from-right">
+        <p>I'm a <strong>third/fourth-year Electrical and Computer Engineering student at the University of Cape Town</strong>, working across embedded systems, high-performance computing, circuit design, and applied machine learning. I like problems that sit at the boundary of disciplines — where a firmware decision affects a signal-processing result, or a hardware constraint shapes a software architecture.</p>
+        <p>My recent work centres on <strong>RuView</strong>, a multi-node ESP32-S3 WiFi sensing mesh that detects motion using channel state information rather than cameras — a project that has taken me from low-level firmware debugging to dashboard design to writing about the ethics of sensing technology.</p>
+        <p>Outside of coursework, I'm interested in robotics, software-defined radio, and how engineers can build technology responsibly. I care about writing code and reports that other people can actually pick up and understand.</p>
+
+        <div class="stat-row">
+          <div class="stat"><span class="num">5+</span><span class="label">Major projects shipped</span></div>
+          <div class="stat"><span class="num">3</span><span class="label">ESP32 mesh nodes built</span></div>
+          <div class="stat"><span class="num">2027</span><span class="label">Expected graduation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SKILLS ============================== -->
+<section class="section-alt" id="skills">
+  <div class="wrap">
+    <div class="eyebrow">02 / Skillset</div>
+    <h2 class="section-title reveal from-up">What I work with</h2>
+    <p class="section-sub reveal from-up">Tools and areas I've built real projects in, not just studied in theory.</p>
+
+    <div class="skill-board">
+      <div class="skill-node reveal from-left">
+        <h4>Embedded Systems</h4>
+        <p>Firmware for microcontrollers, wireless mesh networking, and real-time sensor pipelines.</p>
+        <div class="chip-row">
+          <span class="chip">ESP32-S3</span><span class="chip">ESP-NOW</span><span class="chip">C / C++</span><span class="chip">FreeRTOS</span>
+        </div>
+      </div>
+      <div class="skill-node reveal from-left">
+        <h4>Digital &amp; Computer Architecture</h4>
+        <p>RTL design and co-processor integration for high-performance embedded pipelines.</p>
+        <div class="chip-row">
+          <span class="chip">Verilog</span><span class="chip">FPGA</span><span class="chip">CORDIC</span><span class="chip">Testbenches</span>
+        </div>
+      </div>
+      <div class="skill-node reveal from-right">
+        <h4>Analog &amp; Circuit Design</h4>
+        <p>Op-amp circuits, filters, and power electronics from first principles to working prototypes.</p>
+        <div class="chip-row">
+          <span class="chip">Op-Amps</span><span class="chip">Active Filters</span><span class="chip">DC-DC Converters</span>
+        </div>
+      </div>
+      <div class="skill-node reveal from-right">
+        <h4>Software &amp; Data</h4>
+        <p>From relational database design to deep learning pipelines for medical imaging.</p>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">SQL</span><span class="chip">Git</span>
+        </div>
+      </div>
+      <div class="skill-node reveal from-left">
+        <h4>RF &amp; Communications</h4>
+        <p>Software-defined radio experimentation and wireless system design.</p>
+        <div class="chip-row">
+          <span class="chip">SDR</span><span class="chip">GNU Radio</span><span class="chip">5G NR concepts</span>
+        </div>
+      </div>
+      <div class="skill-node reveal from-right">
+        <h4>Professional Practice</h4>
+        <p>Technical writing, team collaboration, and engineering ethics.</p>
+        <div class="chip-row">
+          <span class="chip">Report Writing</span><span class="chip">ECSA Code of Conduct</span><span class="chip">Team Roles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROJECTS ============================== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">03 / Projects</div>
+    <h2 class="section-title reveal from-up">Selected work</h2>
+    <p class="section-sub reveal from-up">A few projects that show how I approach engineering problems, end to end.</p>
+
+    <div class="project-list">
+
+      <!-- Project 1 -->
+      <article class="project-card reveal from-left">
+        <div class="project-media">
+          <!-- EDIT ME: swap this placeholder for a real image or <video> — see README -->
+          <img src="assets/images/project-ruview-placeholder.svg" alt="RuView WiFi motion detection mesh diagram">
+        </div>
+        <div class="project-text">
+          <div class="tag-row"><span class="chip">ESP32-S3</span><span class="chip">Wireless Sensing</span><span class="chip">Dashboard</span></div>
+          <h3>RuView — WiFi Motion Detection Mesh</h3>
+          <p>A 3-node ESP32-S3 system that detects motion using WiFi channel state information (CSI) and RSSI, instead of cameras — useful for privacy-preserving occupancy sensing. I built the multi-node firmware, debugged ESP-NOW peer registration and RSSI reporting, and designed the live visualisation dashboard.</p>
+          <div class="project-links">
+            <a href="#">Design report (PDF)</a>
+            <a href="#">Demo video</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card reveal from-right">
+        <div class="project-media">
+          <img src="assets/images/project-cordic-placeholder.svg" alt="CORDIC co-processor block diagram">
+        </div>
+        <div class="project-text">
+          <div class="tag-row"><span class="chip">Verilog</span><span class="chip">FPGA</span><span class="chip">Team Project</span></div>
+          <h3>StarCore-1 — CORDIC Rotation Co-Processor</h3>
+          <p>As part of a group HPES project, I integrated a CORDIC-based Coordinate Rotation Unit into the StarCore-1 processor for satellite attitude determination — writing Verilog source, testbenches, and contributing to the IEEE-style final report and presentation.</p>
+          <div class="project-links">
+            <a href="#">Final report</a>
+            <a href="#">GitHub repo</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card reveal from-left">
+        <div class="project-media">
+          <img src="assets/images/project-pneumonia-placeholder.svg" alt="Chest X-ray classification pipeline">
+        </div>
+        <div class="project-text">
+          <div class="tag-row"><span class="chip">PyTorch</span><span class="chip">CNN</span><span class="chip">ResNet18</span></div>
+          <h3>Pneumonia Classification from Chest X-Rays</h3>
+          <p>A deep learning pipeline for classifying pneumonia in the PneumoniaMNIST dataset, comparing a custom CNN against a ResNet18 baseline, later extended to a COVID-19 radiography dataset. Built end to end in PyTorch with a companion notebook.</p>
+          <div class="project-links">
+            <a href="#">Colab notebook</a>
+            <a href="#">Architecture diagram</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card reveal from-right">
+        <div class="project-media">
+          <img src="assets/images/project-sdr-placeholder.svg" alt="Software defined radio hardware">
+        </div>
+        <div class="project-text">
+          <div class="tag-row"><span class="chip">GNU Radio</span><span class="chip">SDR</span><span class="chip">5G NR</span></div>
+          <h3>Interactive 5G / SDR Exhibit</h3>
+          <p>Research into software-defined radio hardware (HackRF, USRP, LimeSDR) and open-source 5G tools, exploring how to design a portable, interactive exhibit that makes invisible RF signals visible to a public audience.</p>
+          <div class="project-links">
+            <a href="#">Literature summary</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ARTEFACTS ============================== -->
+<section class="section-alt" id="artefacts">
+  <div class="wrap">
+    <div class="eyebrow">04 / Artefacts</div>
+    <h2 class="section-title reveal from-up">Evidence of my work</h2>
+    <p class="section-sub reveal from-up">Photos, certificates, and demo clips from the projects above. Click any tile to view it larger.</p>
+
+    <div class="gallery" id="gallery">
+      <!--
+        EDIT ME: each gallery-item is one photo or video.
+        Copy a block, change the file path and caption. See README.
+      -->
+      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-1-placeholder.svg" data-type="image">
+        <img src="assets/images/artefact-1-placeholder.svg" alt="RuView open day demo">
+        <div class="gallery-cap">RuView — Open Day demo</div>
+      </div>
+      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-2-placeholder.svg" data-type="image">
+        <img src="assets/images/artefact-2-placeholder.svg" alt="PCB and node hardware">
+        <div class="gallery-cap">Mesh node hardware build</div>
+      </div>
+      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-3-placeholder.svg" data-type="image">
+        <img src="assets/images/artefact-3-placeholder.svg" alt="Team working session">
+        <div class="gallery-cap">HPES team working session</div>
+      </div>
+      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-4-placeholder.svg" data-type="image">
+        <img src="assets/images/artefact-4-placeholder.svg" alt="Dashboard screenshot">
+        <div class="gallery-cap">Live CSI dashboard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">05 / Contact</div>
+    <h2 class="section-title reveal from-up">Let's talk</h2>
+
+    <div class="contact-panel reveal from-up">
+      <div>
+        <h3 style="margin-bottom:0.4rem;">Open to internships, collaborations, and interesting problems.</h3>
+        <p style="color:var(--ink-soft); margin:0;">I'm always glad to talk embedded systems, RF, or engineering ethics over email or LinkedIn.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:your.email@example.com">your.email@example.com</a>
+        <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">linkedin.com/in/your-profile</a>
+        <a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="pin-divider"><span></span><span></span><span></span><span></span><span></span></div>
+  &copy; <span id="year"></span> Doris N. — Built with HTML, CSS &amp; JavaScript. Deployed on Vercel.
+</footer>
+
+<!-- ============================== LIGHTBOX ============================== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-inner" id="lightboxInner"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

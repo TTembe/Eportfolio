@@ -1,0 +1,5 @@
+Put your .mp4 video files in this folder.
+
+Keep each file under ~20-30MB so the site loads quickly (compress with
+HandBrake or a similar tool if needed — see README.md in the project root
+for the full instructions on linking a video into the page).
