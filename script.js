@@ -1,7 +1,8 @@
 /* ==========================================================================
-   DORIS N. PORTFOLIO — behaviour
+   TLANGELANI D. TEMBE PORTFOLIO — behaviour
    Sections: 1) typing effect  2) scroll reveal (slide from sides)
-   3) nav active-state + mobile toggle  4) gallery lightbox
+   3) nav active-state + mobile toggle  4) media stacks  5) CV viewer
+   6) gallery lightbox
    ========================================================================== */
 
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -16,11 +17,11 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
   const lines = [
     { text: "$ whoami", cls: "prompt" },
-    { text: "Doris N.", cls: "type-name" },
+    { text: "Tlangelani D. Tembe", cls: "type-name" },
     { text: "$ role --current", cls: "prompt" },
     { text: "Electrical & Computer Engineering student, UCT", cls: "" },
     { text: "$ status", cls: "prompt" },
-    { text: "Building RuView — WiFi CSI motion sensing mesh_", cls: "" }
+    { text: "IEEE UCT Treasurer & Vice Chairperson_", cls: "" }
   ];
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -125,8 +126,109 @@ document.getElementById('year').textContent = new Date().getFullYear();
   }
 })();
 
+
 /* -------------------------------------------------------------
-   4) GALLERY LIGHTBOX — click a tile to view it larger
+   4) MEDIA STACKS — cycle through multiple photos/videos per
+   project. Each .media-stack holds several .stack-item elements;
+   clicking the arrows rotates which one sits on top with a
+   cinematic shuffle transition. Videos autoplay (muted) once
+   they reach the front. See README.md for how to add items.
+------------------------------------------------------------- */
+(function mediaStacks() {
+  document.querySelectorAll('.media-stack').forEach(stack => {
+    const items = Array.from(stack.querySelectorAll('.stack-item'));
+    const dots = Array.from(stack.querySelectorAll('.stack-dots span'));
+    const nextBtn = stack.querySelector('.stack-arrow.next');
+    const prevBtn = stack.querySelector('.stack-arrow.prev');
+    const captionEl = stack.querySelector('.stack-caption');
+    if (items.length < 2) return; // nothing to cycle
+
+    // "order" holds the items' indices from front-to-back of the deck
+    let order = items.map((_, i) => i);
+
+    function render(transitioning) {
+      items.forEach((el, idx) => {
+        const pos = order.indexOf(idx);
+        el.dataset.pos = pos <= 3 ? String(pos) : 'hidden';
+        el.classList.toggle('is-transitioning', !!transitioning);
+
+        const vid = el.querySelector('video');
+        if (vid) {
+          if (pos === 0) {
+            const p = vid.play();
+            if (p && p.catch) p.catch(() => {}); // ignore autoplay rejection
+          } else if (!vid.paused) {
+            vid.pause();
+          }
+        }
+      });
+      dots.forEach((d, i) => d.classList.toggle('active', i === order[0]));
+      if (captionEl) {
+        const frontEl = items[order[0]];
+        captionEl.textContent = frontEl.dataset.caption || '';
+        captionEl.style.display = frontEl.dataset.caption ? '' : 'none';
+      }
+    }
+
+    function goNext() {
+      order.push(order.shift()); // front item moves to the back of the deck
+      render(true);
+      setTimeout(() => render(false), 40);
+    }
+    function goPrev() {
+      order.unshift(order.pop()); // back item moves to the front of the deck
+      render(true);
+      setTimeout(() => render(false), 40);
+    }
+
+    nextBtn && nextBtn.addEventListener('click', goNext);
+    prevBtn && prevBtn.addEventListener('click', goPrev);
+
+    dots.forEach((d, i) => {
+      d.addEventListener('click', () => {
+        while (order[0] !== i) order.push(order.shift());
+        render(true);
+        setTimeout(() => render(false), 40);
+      });
+    });
+
+    render(false);
+  });
+})();
+
+/* -------------------------------------------------------------
+   5) CV VIEWER — "View CV" buttons open the CV in an in-page
+   modal (with its own Download button inside), rather than
+   downloading immediately.
+------------------------------------------------------------- */
+(function cvViewer() {
+  const modal = document.getElementById('cvModal');
+  const frame = document.getElementById('cvFrame');
+  const closeBtn = document.getElementById('cvModalClose');
+  if (!modal || !frame) return;
+
+  const CV_PATH = 'assets/documents/CV.pdf';
+
+  function open(e) {
+    if (e) e.preventDefault();
+    frame.src = CV_PATH;
+    modal.classList.add('open');
+  }
+  function close() {
+    modal.classList.remove('open');
+    frame.src = ''; // stop loading/playing once closed
+  }
+
+  document.querySelectorAll('.view-cv-trigger').forEach(btn => {
+    btn.addEventListener('click', open);
+  });
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+})();
+
+/* -------------------------------------------------------------
+   6) GALLERY LIGHTBOX — click a tile to view it larger
    Works for both <img> and <video> (set data-type="video")
 ------------------------------------------------------------- */
 (function lightbox() {

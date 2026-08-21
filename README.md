@@ -1,4 +1,4 @@
-# Doris N. — Engineering E-Portfolio
+# Tlangelani D. Tembe — Engineering E-Portfolio
 
 A single-page e-portfolio built with plain HTML, CSS and JavaScript (no build
 tools, no frameworks) so it's easy to edit and deploys instantly on Vercel.
@@ -40,13 +40,16 @@ Projects, Artefacts, Contact. Search for `EDIT ME` comments — those mark the
 spots you're most likely to change.
 
 ### Change the typed welcome text
-Open **`script.js`**, find the `lines` array near the top (inside the
-`typeEffect` function), and edit the text of each line:
+This one trips people up: the text you see typing itself out on the
+homepage is **not** stored in `index.html`. JavaScript writes over that
+part of the page as soon as it loads, so editing it in `index.html` won't
+do anything. Open **`script.js`** instead, find the `lines` array near the
+top (inside the `typeEffect` function), and edit the text of each line:
 
 ```js
 const lines = [
   { text: "$ whoami", cls: "prompt" },
-  { text: "Doris N.", cls: "type-name" },
+  { text: "Tlangelani D. Tembe", cls: "type-name" },
   { text: "$ role --current", cls: "prompt" },
   { text: "Electrical & Computer Engineering student, UCT", cls: "" },
   ...
@@ -86,11 +89,11 @@ Change the hex values there and the whole site updates.
 3. In `index.html`, find the placeholder you want to replace and update the `src`:
 
 ```html
-<img src="assets/images/profile-placeholder.svg" alt="Portrait of Doris N.">
+<img src="assets/images/profile-placeholder.svg" alt="Portrait of Tlangelani D. Tembe">
 ```
 becomes
 ```html
-<img src="assets/images/profile.jpg" alt="Portrait of Doris N.">
+<img src="assets/images/profile.jpg" alt="Portrait of Tlangelani D. Tembe">
 ```
 
 4. Always keep a short, accurate `alt="..."` description — it's used by
@@ -110,7 +113,7 @@ becomes
 
 ```html
 <div class="project-media">
-  <video src="assets/videos/ruview-demo.mp4" controls muted playsinline poster="assets/images/project-ruview-placeholder.svg"></video>
+  <video src="assets/videos/your-demo.mp4" controls muted playsinline poster="assets/images/your-poster.jpg"></video>
 </div>
 ```
 
@@ -122,7 +125,99 @@ or `ffmpeg -crf 28`) so they load quickly for markers/viewers.
 
 ---
 
-## 5. Publishing with GitHub + Vercel
+## 5. Stacked media (multiple photos/videos per project)
+
+Each project card shows several photos/videos as a layered deck — you can
+see the edges of the items behind the front one, and **‹ ›** arrow buttons
+(plus the dots underneath) let you step through them with a smooth,
+cinematic shuffle transition. Videos autoplay (muted) as soon as they
+reach the front of the stack. This is the `.media-stack` component.
+Structure:
+
+```html
+<div class="project-media">
+  <div class="media-stack">
+    <div class="stack-frame">
+      <div class="stack-item">
+        <img src="assets/images/your-photo.jpg" alt="Describe it">
+      </div>
+      <div class="stack-item">
+        <video muted playsinline controls preload="metadata"
+               poster="assets/images/your-poster.jpg"
+               src="assets/videos/your-clip.mp4"></video>
+      </div>
+      <!-- add as many .stack-item blocks as you like -->
+    </div>
+    <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+    <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+    <div class="stack-dots"><span></span><span></span></div>
+  </div>
+</div>
+```
+
+**To add another item to a stack:** copy one `.stack-item` block, update
+its `src`, and add one more `<span></span>` inside `.stack-dots` so the
+dot indicator matches the number of items. No JavaScript editing needed —
+the cycling behaviour (including autoplay-on-front for videos) picks up
+new items automatically.
+
+**Grouping photos into a stack:** the site groups your uploaded photos
+into stacks by matching filenames — e.g. `IEEE.jpg`, `IEEE2.jpg`, and
+`IEEE4.jpg` (same base name, different number) all live inside one IEEE
+stack; `Work.jpg`, `Work2.jpg`, `Work3.jpg` form the Work stack in
+Artefacts; `Interests.jpg` through `Interests7.jpg` form the Interests
+stack. If you add a new photo that continues one of these series (say,
+`IEEE5.jpg`), just drop it into `assets/images/` and add one more
+`.stack-item` + one more dot in that stack's HTML block, following the
+same pattern. A photo with a name that doesn't match any existing group
+(no shared base name) is best added as its own single image, or as the
+start of a brand-new stack if you have more than one of it.
+
+**Optional captions:** add `data-caption="Your label"` to any
+`.stack-item` and a small caption badge will show in the top-left corner
+whenever that item is at the front of the stack — see the Interests or
+Leadership stacks in `index.html` for examples.
+
+**Video posters:** browsers show a blank first frame until a video is
+played. Give each video a `poster="..."` image (a still frame) so it
+looks good before anyone presses play. You can grab a frame with:
+```bash
+ffmpeg -i assets/videos/your-clip.mp4 -ss 00:00:01 -vframes 1 assets/images/your-poster.jpg
+```
+
+**Animating a static diagram ("data flow" effect):** if you have a
+diagram (like a block diagram or flowchart) instead of an actual video,
+you can give it a subtle animated "data flowing through it" look without
+needing a real video file. Wrap the image in a `.project-media
+flow-diagram` container:
+```html
+<div class="project-media flow-diagram">
+  <img src="assets/images/your-diagram.jpg" alt="Describe it">
+</div>
+```
+This adds a soft light streak that continuously sweeps across the image
+(see `.flow-diagram` in `style.css` to adjust its speed or colour). It's
+used on the StarCore-1 block diagram as an example.
+
+---
+
+## 6. Adding your CV
+
+Save your CV as a PDF into `assets/documents/CV.pdf` (exactly that name,
+or update the paths mentioned below to match your filename).
+
+The site doesn't download your CV immediately — clicking **"View CV"**
+(in the hero) or **"View"** (in the About section) opens it in an
+in-page viewer first, with its own **Download** button inside. Both
+buttons use the `view-cv-trigger` class to open that viewer; if you add
+another CV link elsewhere on the site, give it the same class and it
+will open the same viewer automatically. The viewer and its Download
+button both point to `assets/documents/CV.pdf` — update both paths in
+`index.html` if you use a different filename.
+
+---
+
+## 7. Publishing with GitHub + Vercel
 
 This gets your portfolio onto a live, single link you can hand in — and
 every time you push a change to GitHub, Vercel automatically redeploys it.
@@ -168,7 +263,7 @@ That URL is your single hand-in link.
 
 ---
 
-## 6. Before you submit — quick checklist
+## 8. Before you submit — quick checklist
 
 - [ ] Replace all placeholder images/videos with your own
 - [ ] Update the email, LinkedIn and GitHub links in the Contact section

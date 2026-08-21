@@ -23,6 +23,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
       <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#involvement" class="nav-link" data-section="involvement">Involvement</a></li>
       <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
       <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
       <li><a href="#artefacts" class="nav-link" data-section="artefacts">Artefacts</a></li>
@@ -59,6 +60,8 @@
       <p>I'm an engineering student who likes to trace a problem all the way from a sensor's analog front end to the dashboard that makes its data useful. This portfolio walks through how I think, what I've built, and where I'm headed.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn">View projects</a>
+        <!-- EDIT ME: add your CV file to assets/documents/CV.pdf, or update this path -->
+        <button type="button" class="btn cv view-cv-trigger">View CV</button>
         <a href="#contact" class="btn ghost">Get in touch</a>
       </div>
     </div>
@@ -69,7 +72,7 @@
         <span class="terminal-title">serial_monitor — 115200 baud</span>
       </div>
       <div class="terminal-body" id="typeTarget">
-        <span class="prompt"></span> whoami<br>
+        <span class="prompt">$</span> whoami<br>
         <span class="cursor" id="typeCursor"></span>
       </div>
     </div>
@@ -93,7 +96,7 @@
             Put your image file in assets/images/ and reference it,
             e.g. src="assets/images/profile.jpg"
           -->
-          <img src="assets/images/profile-placeholder.svg" alt="Portrait of Doris N.">
+          <img src="assets/images/ProfilePhoto.jpg" alt="Portrait of Tlangelani D. Tembe">
           <span class="portrait-tag">Cape Town, South Africa</span>
         </div>
       </div>
@@ -108,15 +111,157 @@
           <div class="stat"><span class="num">3</span><span class="label">ESP32 mesh nodes built</span></div>
           <div class="stat"><span class="num">2027</span><span class="label">Expected graduation</span></div>
         </div>
+
+        <!-- EDIT ME: add your CV file to assets/documents/CV.pdf, or update this path -->
+        <div class="resume-card">
+          <div class="doc-icon" aria-hidden="true"></div>
+          <div class="resume-copy">
+            <strong>Curriculum Vitae</strong>
+            <span>PDF · updated 2026</span>
+          </div>
+          <a href="#" class="btn view-cv-trigger">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INVOLVEMENT ============================== -->
+<section class="section-alt" id="involvement">
+  <div class="wrap">
+    <div class="eyebrow">02 / Leadership &amp; Involvement</div>
+    <h2 class="section-title reveal from-up">Beyond the classroom</h2>
+    <p class="section-sub reveal from-up">Leadership, community, and the things that keep me curious outside of coursework.</p>
+
+    <div class="leader-panel">
+      <div class="reveal from-left">
+        <div class="media-stack leader-stack">
+          <div class="stack-frame">
+            <div class="stack-item" data-caption="Campus outreach">
+              <img src="assets/images/IEEE.jpg" alt="Standing next to an IEEE banner on campus">
+            </div>
+            <div class="stack-item" data-caption="Leading a workshop">
+              <img src="assets/images/IEEE4.jpg" alt="Leading an IEEE outreach workshop">
+            </div>
+            <div class="stack-item" data-caption="Executive Committee">
+              <img src="assets/images/IEEE2.jpg" alt="Tlangelani wearing IEEE Executive Committee shirt">
+            </div>
+            <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+          </div>
+          <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+          <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+          <div class="stack-caption"></div>
+          <div class="stack-dots"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="leader-copy reveal from-right">
+        <div class="role-pill-row">
+          <span class="role-pill">IEEE UCT — Treasurer</span>
+          <span class="role-pill">IEEE UCT — Vice Chairperson</span>
+        </div>
+        <h3>IEEE UCT Student Branch</h3>
+        <p>I've served on the executive committee of the IEEE UCT Student Branch, first as <strong>Treasurer</strong> — managing the branch budget and funding for events and outreach — and later as <strong>Vice Chairperson</strong>, helping coordinate the committee and represent the branch at university and industry events. These roles have sharpened my organisation, communication, and leadership skills alongside my technical coursework.</p>
+      </div>
+    </div>
+
+    <h4 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:1rem;">Conferences &amp; community</h4>
+    <div class="mini-stack-grid" style="margin-bottom: clamp(2.5rem, 5vw, 4rem);">
+
+      <!-- WICS — only one photo, so no stack chrome needed -->
+      <div class="mini-stack-card reveal from-up">
+        <div class="mini-stack-frame">
+          <img src="assets/images/WICS.JPG" alt="WICS UCT Women in Computer Science event banner">
+        </div>
+        <div class="mini-stack-cap"><strong>WICS UCT</strong><span>Women in Computer Science event</span></div>
+      </div>
+
+      <!-- YES! Summit — 2 photos stacked -->
+      <div class="mini-stack-card reveal from-up">
+        <div class="media-stack">
+          <div class="stack-frame">
+            <div class="stack-item" data-caption="Panel discussion">
+              <img src="assets/images/YES_Summit.jpg" alt="Panel discussion at the YES! Youth Energy Summit">
+            </div>
+            <div class="stack-item" data-caption="Delegate badge">
+              <img src="assets/images/YES_Summit2.jpg" alt="Delegate badge at the YES! Youth Energy Summit">
+            </div>
+            <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+          </div>
+          <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+          <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+          <div class="stack-caption"></div>
+          <div class="stack-dots"><span></span><span></span></div>
+        </div>
+        <div class="mini-stack-cap"><strong>YES! Youth Energy Summit</strong><span>Clean energy investment panel</span></div>
+      </div>
+
+      <!-- Scatec — 2 photos stacked -->
+      <div class="mini-stack-card reveal from-up">
+        <div class="media-stack">
+          <div class="stack-frame">
+            <div class="stack-item" data-caption="Site visit">
+              <img src="assets/images/Scatec.jpg" alt="Site visit at Scatec Talent Acquisition">
+            </div>
+            <div class="stack-item" data-caption="Safety briefing">
+              <img src="assets/images/Scatec2.jpg" alt="PPE briefing during the Scatec site visit">
+            </div>
+            <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+          </div>
+          <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+          <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+          <div class="stack-caption"></div>
+          <div class="stack-dots"><span></span><span></span></div>
+        </div>
+        <div class="mini-stack-cap"><strong>Scatec Site Visit</strong><span>Renewable energy industry exposure</span></div>
+      </div>
+
+    </div>
+
+    <h4 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:1rem;">Interests</h4>
+    <div class="leader-panel text-left">
+      <div class="leader-copy reveal from-left">
+        <p>When I'm not at a desk or in a lab, I'm usually outdoors or in the kitchen. I love <strong>hiking</strong> Cape Town's mountains for the view, getting out on the <strong>tennis</strong> court on weekends, and taking any excuse for an adventure — from <strong>quad biking</strong> through the Winelands to picking strawberries on a farm. I also love <strong>cooking</strong>, and I'm always collecting new recipes, including a memorable stop at a cookbook signing. These are the moments I recharge in, and they bring a fresh perspective back to my engineering work.</p>
+      </div>
+      <div class="reveal from-right">
+        <div class="media-stack">
+          <div class="stack-frame">
+            <div class="stack-item" data-caption="Exploring the winelands — quad biking">
+              <img src="assets/images/Interests6.jpg" alt="Riding a quad bike through a vineyard">
+            </div>
+            <div class="stack-item" data-caption="Hiking — Lion's Head / Signal Hill">
+              <img src="assets/images/Interests.jpg" alt="Standing on a mountain overlooking Cape Town">
+            </div>
+            <div class="stack-item" data-caption="Cooking — collecting new recipes">
+              <img src="assets/images/Interests2.jpg" alt="Holding a cookbook titled A Food Love Story">
+            </div>
+            <div class="stack-item" data-caption="Cooking — meeting a cookbook author">
+              <img src="assets/images/Interests3.jpg" alt="At a cookbook signing event with the author">
+            </div>
+            <div class="stack-item" data-caption="Tennis — weekend games">
+              <img src="assets/images/Interests4.jpg" alt="Playing tennis on an outdoor court">
+            </div>
+            <div class="stack-item" data-caption="Exploring Cape Town — Clifton &amp; Camps Bay">
+              <img src="assets/images/Interests5.jpg" alt="Coastal view over Clifton and Camps Bay">
+            </div>
+            <div class="stack-item" data-caption="Strawberry picking on a farm">
+              <img src="assets/images/Interests7.jpg" alt="Strawberry picking on a farm">
+            </div>
+            <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+          </div>
+          <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+          <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+          <div class="stack-caption"></div>
+          <div class="stack-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================== SKILLS ============================== -->
-<section class="section-alt" id="skills">
+<section id="skills">
   <div class="wrap">
-    <div class="eyebrow">02 / Skillset</div>
+    <div class="eyebrow">03 / Skillset</div>
     <h2 class="section-title reveal from-up">What I work with</h2>
     <p class="section-sub reveal from-up">Tools and areas I've built real projects in, not just studied in theory.</p>
 
@@ -170,17 +315,116 @@
 <!-- ============================== PROJECTS ============================== -->
 <section id="projects">
   <div class="wrap">
-    <div class="eyebrow">03 / Projects</div>
+    <div class="eyebrow">04 / Projects</div>
     <h2 class="section-title reveal from-up">Selected work</h2>
     <p class="section-sub reveal from-up">A few projects that show how I approach engineering problems, end to end.</p>
 
     <div class="project-list">
 
-      <!-- Project 1 -->
+      <!-- Project 1 — Micromouse: 2 videos stacked, click to cycle -->
       <article class="project-card reveal from-left">
         <div class="project-media">
-          <!-- EDIT ME: swap this placeholder for a real image or <video> — see README -->
-          <img src="assets/images/project-ruview-placeholder.svg" alt="RuView WiFi motion detection mesh diagram">
+          <div class="media-stack">
+            <div class="stack-frame">
+              <div class="stack-item" data-caption="Simulation">
+                <video muted playsinline controls preload="metadata"
+                       poster="assets/images/posters/Micromouse_simulation_poster.jpg"
+                       src="assets/videos/Micromouse_simulation.mp4"></video>
+              </div>
+              <div class="stack-item" data-caption="Practical demo">
+                <video muted playsinline controls preload="metadata"
+                       poster="assets/images/posters/Micromouse_PracticalDemo_poster.jpg"
+                       src="assets/videos/Micromouse_PracticalDemo.mp4"></video>
+              </div>
+              <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+            </div>
+            <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+            <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+            <div class="stack-caption"></div>
+            <div class="stack-dots"><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="project-text">
+          <div class="tag-row"><span class="chip">Robotics</span><span class="chip">Embedded Control</span><span class="chip">Simulation</span></div>
+          <h3>Micromouse — Maze-Solving Robot</h3>
+          <p>A micromouse robot designed to autonomously navigate and solve a maze, moving from a simulated model through to a working physical prototype. The project covers sensor integration, motor control, and maze-solving algorithms running on embedded hardware.</p>
+          <div class="project-links">
+            <a href="#">Design report</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 — Embedded systems & PCB: 2 videos stacked -->
+      <article class="project-card reveal from-right">
+        <div class="project-media">
+          <div class="media-stack">
+            <div class="stack-frame">
+              <div class="stack-item" data-caption="Embedded systems build">
+                <video muted playsinline controls preload="metadata"
+                       poster="assets/images/posters/Embedded_systems_poster.jpg"
+                       src="assets/videos/Embedded_systems.mp4"></video>
+              </div>
+              <div class="stack-item" data-caption="PCB 3D render">
+                <video muted playsinline controls preload="metadata"
+                       poster="assets/images/posters/PCB_3D_poster.jpg"
+                       src="assets/videos/PCB_3D.mp4"></video>
+              </div>
+              <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+            </div>
+            <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+            <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+            <div class="stack-caption"></div>
+            <div class="stack-dots"><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="project-text">
+          <div class="tag-row"><span class="chip">PCB Design</span><span class="chip">Embedded Systems</span><span class="chip">Hardware</span></div>
+          <h3>Embedded Systems &amp; PCB Design</h3>
+          <p>Design and prototyping of a custom PCB as part of an embedded systems project — from schematic capture and 3D layout visualisation through to a working embedded hardware build integrating microcontroller peripherals.</p>
+          <div class="project-links">
+            <a href="#">Design files</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 — Control systems: 2 images stacked -->
+      <article class="project-card reveal from-left">
+        <div class="project-media">
+          <div class="media-stack">
+            <div class="stack-frame">
+              <div class="stack-item" data-caption="Signal chain schematic">
+                <img src="assets/images/controller.jpg" alt="Op-amp based DAC-ADC signal chain schematic">
+              </div>
+              <div class="stack-item" data-caption="MATLAB root-locus tuning">
+                <img src="assets/images/controller2.jpg" alt="MATLAB root locus and step response tuning">
+              </div>
+              <div class="stack-item" data-caption="Breadboard prototype">
+                <img src="assets/images/Controller3.jpg" alt="Breadboard prototype of the signal-conditioning circuit">
+              </div>
+              <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+            </div>
+            <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+            <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+            <div class="stack-caption"></div>
+            <div class="stack-dots"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="project-text">
+          <div class="tag-row"><span class="chip">Control Systems</span><span class="chip">MATLAB</span><span class="chip">Circuit Design</span></div>
+          <h3>Control Systems Design</h3>
+          <p>Designed an op-amp based signal-conditioning chain between a DAC and ADC, then tuned a feedback controller using root-locus analysis in MATLAB to meet target transient-response specifications.</p>
+          <div class="project-links">
+            <a href="#">Report</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 (original) -->
+      <article class="project-card reveal from-right">
+        <div class="project-media">
+          <video muted playsinline controls preload="metadata"
+                 poster="assets/images/posters/WiFi_Motion_Radar_poster.jpg"
+                 src="assets/videos/WiFi_Motion_Radar_Simulation.mp4"></video>
         </div>
         <div class="project-text">
           <div class="tag-row"><span class="chip">ESP32-S3</span><span class="chip">Wireless Sensing</span><span class="chip">Dashboard</span></div>
@@ -195,8 +439,31 @@
 
       <!-- Project 2 -->
       <article class="project-card reveal from-right">
-        <div class="project-media">
-          <img src="assets/images/project-cordic-placeholder.svg" alt="CORDIC co-processor block diagram">
+        <div class="project-media flow-diagram">
+          <!-- Animated dots trace the data path through the pipeline — a live,
+               video-like effect for this static diagram. See .flow-diagram /
+               .flow-svg in style.css to adjust paths, speed, or colour. -->
+          <img src="assets/images/Star_Core.jpg" alt="StarCore-1 processor block diagram with CORDIC co-processor integration">
+          <svg class="flow-svg" viewBox="0 0 1536 1017" preserveAspectRatio="none" aria-hidden="true">
+            <path id="flowPathA" d="M40,300 H520 V520 H1480" fill="none" stroke="none"/>
+            <path id="flowPathB" d="M520,180 V520" fill="none" stroke="none"/>
+            <path id="flowPathC" d="M60,900 H1480" fill="none" stroke="none"/>
+            <circle r="11" class="flow-dot flow-dot-a">
+              <animateMotion dur="4s" repeatCount="indefinite">
+                <mpath href="#flowPathA"/>
+              </animateMotion>
+            </circle>
+            <circle r="9" class="flow-dot flow-dot-b">
+              <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.5s">
+                <mpath href="#flowPathB"/>
+              </animateMotion>
+            </circle>
+            <circle r="8" class="flow-dot flow-dot-c">
+              <animateMotion dur="5s" repeatCount="indefinite" begin="1s">
+                <mpath href="#flowPathC"/>
+              </animateMotion>
+            </circle>
+          </svg>
         </div>
         <div class="project-text">
           <div class="tag-row"><span class="chip">Verilog</span><span class="chip">FPGA</span><span class="chip">Team Project</span></div>
@@ -212,12 +479,26 @@
       <!-- Project 3 -->
       <article class="project-card reveal from-left">
         <div class="project-media">
-          <img src="assets/images/project-pneumonia-placeholder.svg" alt="Chest X-ray classification pipeline">
+          <div class="media-stack">
+            <div class="stack-frame">
+              <div class="stack-item" data-caption="COVID-19 &amp; pneumonia classification">
+                <img src="assets/images/Covid_Pneumonia.jpg" alt="Sample COVID-19 and pneumonia chest X-ray training images">
+              </div>
+              <div class="stack-item" data-caption="MRI k-space filtering">
+                <img src="assets/images/MRI_Scan.jpg" alt="MRI brain scan low-pass filtering in k-space">
+              </div>
+              <!-- EDIT ME: add more <div class="stack-item">...</div> blocks here for more media -->
+            </div>
+            <button class="stack-arrow prev" type="button" aria-label="Previous media">‹</button>
+            <button class="stack-arrow next" type="button" aria-label="Next media">›</button>
+            <div class="stack-caption"></div>
+            <div class="stack-dots"><span></span><span></span></div>
+          </div>
         </div>
         <div class="project-text">
-          <div class="tag-row"><span class="chip">PyTorch</span><span class="chip">CNN</span><span class="chip">ResNet18</span></div>
-          <h3>Pneumonia Classification from Chest X-Rays</h3>
-          <p>A deep learning pipeline for classifying pneumonia in the PneumoniaMNIST dataset, comparing a custom CNN against a ResNet18 baseline, later extended to a COVID-19 radiography dataset. Built end to end in PyTorch with a companion notebook.</p>
+          <div class="tag-row"><span class="chip">PyTorch</span><span class="chip">CNN</span><span class="chip">Medical Imaging</span></div>
+          <h3>Medical Imaging &amp; Classification</h3>
+          <p>A deep learning pipeline for classifying pneumonia in the PneumoniaMNIST dataset, comparing a custom CNN against a ResNet18 baseline, later extended to a COVID-19 radiography dataset. Also explored MRI image reconstruction, including low-pass filtering in k-space to study the trade-off between scan speed and image detail.</p>
           <div class="project-links">
             <a href="#">Colab notebook</a>
             <a href="#">Architecture diagram</a>
@@ -228,7 +509,7 @@
       <!-- Project 4 -->
       <article class="project-card reveal from-right">
         <div class="project-media">
-          <img src="assets/images/project-sdr-placeholder.svg" alt="Software defined radio hardware">
+          <img src="assets/images/SDR.jpg" alt="Software-defined radio hardware board with antennas">
         </div>
         <div class="project-text">
           <div class="tag-row"><span class="chip">GNU Radio</span><span class="chip">SDR</span><span class="chip">5G NR</span></div>
@@ -247,7 +528,7 @@
 <!-- ============================== ARTEFACTS ============================== -->
 <section class="section-alt" id="artefacts">
   <div class="wrap">
-    <div class="eyebrow">04 / Artefacts</div>
+    <div class="eyebrow">05 / Artefacts</div>
     <h2 class="section-title reveal from-up">Evidence of my work</h2>
     <p class="section-sub reveal from-up">Photos, certificates, and demo clips from the projects above. Click any tile to view it larger.</p>
 
@@ -256,21 +537,17 @@
         EDIT ME: each gallery-item is one photo or video.
         Copy a block, change the file path and caption. See README.
       -->
-      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-1-placeholder.svg" data-type="image">
-        <img src="assets/images/artefact-1-placeholder.svg" alt="RuView open day demo">
-        <div class="gallery-cap">RuView — Open Day demo</div>
+      <div class="gallery-item reveal from-up" data-full="assets/images/Work.jpg" data-type="image">
+        <img src="assets/images/Work.jpg" alt="Desk with laptop open on UCT course material">
+        <div class="gallery-cap">EEE3090F coursework session</div>
       </div>
-      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-2-placeholder.svg" data-type="image">
-        <img src="assets/images/artefact-2-placeholder.svg" alt="PCB and node hardware">
-        <div class="gallery-cap">Mesh node hardware build</div>
+      <div class="gallery-item reveal from-up" data-full="assets/images/Work2.jpg" data-type="image">
+        <img src="assets/images/Work2.jpg" alt="Lab workstation with control systems tutorial notes">
+        <div class="gallery-cap">Control systems tutorial — lab bench</div>
       </div>
-      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-3-placeholder.svg" data-type="image">
-        <img src="assets/images/artefact-3-placeholder.svg" alt="Team working session">
-        <div class="gallery-cap">HPES team working session</div>
-      </div>
-      <div class="gallery-item reveal from-up" data-full="assets/images/artefact-4-placeholder.svg" data-type="image">
-        <img src="assets/images/artefact-4-placeholder.svg" alt="Dashboard screenshot">
-        <div class="gallery-cap">Live CSI dashboard</div>
+      <div class="gallery-item reveal from-up" data-full="assets/images/Work3.jpg" data-type="image">
+        <img src="assets/images/Work3.jpg" alt="Trying on a hard hat ahead of a site visit">
+        <div class="gallery-cap">Getting kitted out for a site visit</div>
       </div>
     </div>
   </div>
@@ -279,7 +556,7 @@
 <!-- ============================== CONTACT ============================== -->
 <section id="contact">
   <div class="wrap">
-    <div class="eyebrow">05 / Contact</div>
+    <div class="eyebrow">06 / Contact</div>
     <h2 class="section-title reveal from-up">Let's talk</h2>
 
     <div class="contact-panel reveal from-up">
@@ -305,6 +582,21 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
   <div class="lightbox-inner" id="lightboxInner"></div>
+</div>
+
+<!-- ============================== CV VIEWER ============================== -->
+<!-- EDIT ME: add your CV file to assets/documents/CV.pdf, or update the two paths below -->
+<div class="cv-modal" id="cvModal">
+  <div class="cv-modal-inner">
+    <div class="cv-modal-bar">
+      <span>Curriculum Vitae</span>
+      <div class="cv-modal-actions">
+        <a href="assets/documents/CV.pdf" class="btn" download>Download</a>
+        <button class="cv-modal-close" id="cvModalClose" aria-label="Close">✕</button>
+      </div>
+    </div>
+    <iframe class="cv-frame" id="cvFrame" src="" title="Curriculum Vitae"></iframe>
+  </div>
 </div>
 
 <script src="script.js"></script>
