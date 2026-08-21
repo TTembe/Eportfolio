@@ -19,9 +19,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
     { text: "$ whoami", cls: "prompt" },
     { text: "Tlangelani D. Tembe", cls: "type-name" },
     { text: "$ role --current", cls: "prompt" },
-    { text: "Electrical & Computer Engineering student, UCT", cls: "" },
+    { text: "Electrical & Computer Engineering student", cls: "" },
     { text: "$ status", cls: "prompt" },
-    { text: "IEEE UCT Treasurer & Vice Chairperson_", cls: "" }
+    { text: "Former IEEE UCT Treasurer & Vice Chairperson_", cls: "" }
   ];
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
